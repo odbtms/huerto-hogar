@@ -1,0 +1,177 @@
+/* Paleta de colores */
+:root {
+    --verde-hoja: #4CAF50;
+    --verde-hoja-oscuro: #2E7D32;
+    --marron-tierra: #8D6E63;
+    --marron-tierra-oscuro: #5D4037;
+    --rojo-manzana: #E53935;
+    --amarillo-limon: #d2b42e;
+    --naranja-calabaza: #FB8C00;
+    --beige: #F5F5DC;
+    --arena: #EDE0D4;
+    --gris-suave: #9E9E9E;
+}
+
+/* Fondo general */
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(135deg, var(--beige) 0%, var(--arena) 100%);
+    color: var(--verde-hoja-oscuro);
+}
+
+/* Navbar */
+.navbar {
+    background: var(--beige) !important;
+    border-bottom: 2px solid var(--arena);
+}
+.navbar-brand {
+    color: var(--verde-hoja) !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 2rem;
+}
+.nav-link {
+    color: var(--marron-tierra-oscuro) !important;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-link:hover {
+    color: var(--naranja-calabaza) !important;
+}
+
+/* Botones */
+.btn-success {
+    background: linear-gradient(90deg, var(--verde-hoja) 60%, var(--naranja-calabaza) 100%);
+    border: none;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.1s;
+    color: var(--arena);
+}
+.btn-success:hover {
+    background: linear-gradient(90deg, var(--naranja-calabaza) 60%, var(--verde-hoja) 100%);
+    color: var(--arena);
+    transform: scale(1.03);
+}
+.btn-success:active {
+    transform: scale(0.97);
+}
+.btn-primary {
+    background: var(--amarillo-limon);
+    border: none;
+    font-weight: 600;
+    color: var(--marron-tierra-oscuro);
+    box-shadow: 0 4px 16px rgba(253,216,53,0.15);
+    transition: background 0.2s, color 0.2s;
+}
+.btn-primary:hover {
+    background: var(--naranja-calabaza);
+    color: var(--beige);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(120deg, var(--beige) 60%, var(--arena) 100%);
+    padding: 60px 0 40px 0;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 24px rgba(76,175,80,0.08);
+}
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--verde-hoja-oscuro);
+}
+.hero .highlight {
+    color: var(--rojo-manzana);
+}
+.hero .lead {
+    color: var(--verde-hoja);
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+/* Categorías y tarjetas */
+.category-card {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(76,175,80,0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    background: var(--beige);
+}
+.category-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(229,57,53,0.12);
+}
+.category-card img {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 180px;
+    object-fit: cover;
+}
+.card-title {
+    color: var(--verde-hoja);
+    font-weight: 700;
+}
+.card-title.frutas { color: var(--rojo-manzana); }
+.card-title.verduras { color: var(--verde-hoja); }
+.card-title.organicos { color: var(--naranja-calabaza); }
+.card-title.lacteos { color: var(--amarillo-limon); }
+.card-body {
+    padding-bottom: 18px;
+}
+.text-secondary {
+    color: var(--gris-suave) !important;
+}
+
+/* Footer */
+footer, .footer {
+    background: var(--arena) !important;
+    color: var(--marron-tierra-oscuro);
+    font-weight: 500;
+    border-top: 2px solid var(--beige);
+    letter-spacing: 1px;
+}
+
+/* Formularios */
+.form-registro {
+    background: rgba(245,245,220,0.96); /* beige semitransparente */
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(60,163,116,0.12);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0;
+    overflow: hidden;
+}
+.form-registro .bg-success {
+    background: linear-gradient(90deg, var(--verde-hoja) 60%, var(--naranja-calabaza) 100%) !important;
+    border-radius: 22px 22px 0 0;
+}
+.form-registro label {
+    color: var(--verde-hoja);
+    font-weight: 600;
+}
+.form-registro .form-control {
+    border-radius: 10px;
+    border: 1px solid var(--arena);
+}
+
+/* Animaciones generales */
+.card, .category-card {
+    transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+}
+.card:hover, .category-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(251,140,0,0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-registro {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .hero {
+        padding: 30px 0 20px 0;
+    }
+}
