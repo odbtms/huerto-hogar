@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Orgánicos | HuertoHogar</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/miestilo.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">HuertoHogar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#categorias">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero py-4">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold card-title organicos mb-2">🌱 Productos Orgánicos</h1>
+            <p class="lead text-secondary mb-0">Miel, granos, frutos secos y más, directo del productor a tu hogar.
+            </p>
+        </div>
+    </section>
+
+    <!-- Tarjetas de productos orgánicos -->
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+
+            <!-- Tarjeta 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card category-card h-100">
+                    <img src="img/Miel-Organica.jpg" class="card-img-top" alt="Miel Orgánica"
+                        style="height: 220px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title organicos">Miel Orgánica</h5>
+                        <p class="card-text">Miel pura, sin aditivos, cosechada de colmenas locales.</p>
+                        <div class="mt-auto">
+                            <p class="mb-2"><strong>Precio:</strong> $3.500 CLP / 500g</p>
+                            <button type="button" class="btn btn-success w-100">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card category-card h-100">
+                    <img src="img/Quinua-Organica.png" class="card-img-top" alt="Avena Orgánica"
+                        style="height: 220px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title organicos">Avena Orgánica</h5>
+                        <p class="card-text">Avena integral, ideal para desayunos saludables y nutritivos.</p>
+                        <div class="mt-auto">
+                            <p class="mb-2"><strong>Precio:</strong> $2.000 CLP / 1kg</p>
+                            <button type="button" class="btn btn-success w-100">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 footer">
+        <p class="mb-0">&copy; 2025 HuertoHogar - Todos los derechos reservados</p>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
