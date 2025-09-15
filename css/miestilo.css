@@ -353,3 +353,82 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
     }
 }
+
+/* --- INICIO: REDISEÑO VISTA ADMINISTRADOR --- */
+
+.admin-page-background {
+    background-image: linear-gradient(rgba(1, 95, 43, 0.85), rgba(1, 95, 43, 0.85)), url('../img/fondo1.jpg');
+    background-size: cover;
+    background-attachment: fixed; /* El fondo no se mueve al hacer scroll */
+}
+
+/* Títulos con íconos */
+.admin-page-background .section-title,
+.admin-page-background .card-header {
+    color: #ffffff; /* Títulos blancos para que resalten */
+}
+
+.admin-page-background .section-subtitle {
+    color: #e0e0e0; /* Subtítulo un poco más suave */
+}
+
+.admin-page-background .card {
+    background-color: rgba(255, 255, 255, 0.9); /* Tarjetas semi-transparentes */
+    border: none;
+    backdrop-filter: blur(5px);
+}
+
+.admin-page-background .card-header {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+/* Nuevas tarjetas de métricas con imágenes */
+.metric-card {
+    position: relative;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre ícono y texto */
+    transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    z-index: 1;
+}
+
+.metric-card .content, .metric-card .icon {
+    position: relative;
+    z-index: 2;
+}
+
+.metric-card .icon i {
+    font-size: 2rem; /* Ícono más grande */
+    opacity: 0.8;
+}
+
+.metric-card strong {
+    font-size: 1.75rem;
+    display: block;
+}
+
+/* Asignación de imágenes de fondo a las tarjetas */
+.bg-frutas::before { background-image: url('../img/frutasfrescas.jpg'); }
+.bg-verduras::before { background-image: url('../img/organicooo.jpg'); }
+.bg-organicos::before { background-image: url('../img/prodorganicos.jpg'); }
+.bg-lacteos::before { background-image: url('../img/lacteoss.jpg'); }
+
+/* --- FIN: REDISEÑO VISTA ADMINISTRADOR --- */
