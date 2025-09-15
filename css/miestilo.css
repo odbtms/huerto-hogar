@@ -240,51 +240,69 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- INICIO: NUEVO ESTILO DE TARJETAS DE PRODUCTO --- */
+
 .card-product {
+    background-color: var(--color-fondo-sutil); /* Fondo gris claro */
     border: 1px solid var(--color-borde);
-    border-radius: 12px;
-    background-color: var(--color-fondo);
-    transition: all 0.3s ease;
-    text-align: left; /* Alineamos el texto a la izquierda */
+    border-radius: 16px; /* Bordes más redondeados */
+    text-align: center;
+    padding-top: 1.5rem;
+    overflow: hidden; /* Oculta el botón que se animará */
+    position: relative;
+    transition: all 0.4s ease;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Hacemos que todas las tarjetas tengan la misma altura */
 }
 
 .card-product:hover {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-    transform: translateY(-5px);
-    border-color: var(--color-acento);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
 .card-product .card-img-top {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    max-height: 160px;
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto 1rem auto;
+    transition: transform 0.4s ease;
+}
+
+.card-product:hover .card-img-top {
+    transform: scale(1.05);
 }
 
 .card-product .card-body {
-    padding: 1.5rem;
+    padding: 0 1.5rem 1.5rem;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Permite que el card-body ocupe el espacio restante */
 }
 
 .card-product .card-title {
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .card-product .card-price {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-acento);
+    font-size: 1.1rem;
+    color: var(--color-texto-secundario);
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.card-product .btn {
-    margin-top: auto; /* Empuja el botón siempre hacia abajo */
+.card-product .btn-container {
+    position: absolute;
+    bottom: -100%; /* Empieza oculto fuera de la tarjeta */
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background-color: var(--color-fondo);
+    transition: bottom 0.4s ease;
+}
+
+.card-product:hover .btn-container {
+    bottom: 0; /* Aparece al hacer hover */
 }
 /* --- FIN: NUEVO ESTILO DE TARJETAS DE PRODUCTO --- */
