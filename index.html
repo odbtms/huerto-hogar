@@ -21,7 +21,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Catalogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
                 </ul>
@@ -41,49 +41,52 @@
             <h1 class="mx-auto">El sabor del campo, en la comodidad de tu hogar.</h1>
             <p class="mx-auto">Productos frescos, locales y llenos de vida, entregados directamente a tu puerta.</p>
             <div class="mt-4">
-                <a href="#" class="btn btn-primary">Ver Productos</a>
-                <a href="#" class="btn btn-light ms-2">Ver Ofertas</a> </div>
+                <!-- Botón en el hero -->
+                <a href="#categorias" class="btn btn-primary rounded-pill px-4 py-2" style="font-size: 1.1rem;">Ver productos</a>
         </div>
     </header>
 
     <main class="container my-5 py-5">
-        <div class="text-center mb-5">
-            <h2 class="h1">Explora Nuestras Categorías</h2>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <a href="frutasfres.html" class="card-product text-decoration-none">
-                    <div class="card-img-container">
-                        <img src="img/frutasfrescas.jpg" class="card-img-top" alt="Frutas Frescas">
-                    </div>
-                    <h5 class="card-title">Frutas Frescas</h5>
-                </a>
+        <!-- ...más abajo en tu HTML... -->
+        <section id="categorias">
+            <div class="text-center mb-5">
+                <h2 class="h1">Explora Nuestras Categorías</h2>
             </div>
-             <div class="col-md-6 col-lg-3">
-                <a href="verduras.html" class="card-product text-decoration-none">
-                    <div class="card-img-container">
-                        <img src="img/organicas.jpg" class="card-img-top" alt="Verduras Orgánicas">
-                    </div>
-                    <h5 class="card-title">Verduras Orgánicas</h5>
-                </a>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a href="frutasfres.html" class="card-product text-decoration-none">
+                        <div class="card-img-container">
+                            <img src="img/frutasfrescas.jpg" class="card-img-top" alt="Frutas Frescas">
+                        </div>
+                        <h5 class="card-title">Frutas Frescas</h5>
+                    </a>
+                </div>
+                 <div class="col-md-6 col-lg-3">
+                    <a href="verduras.html" class="card-product text-decoration-none">
+                        <div class="card-img-container">
+                            <img src="img/organicas.jpg" class="card-img-top" alt="Verduras Orgánicas">
+                        </div>
+                        <h5 class="card-title">Verduras Orgánicas</h5>
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <a href="prodtusorg.html" class="card-product text-decoration-none">
+                        <div class="card-img-container">
+                            <img src="img/prodorganicos.jpg" class="card-img-top" alt="Productos Orgánicos">
+                        </div>
+                        <h5 class="card-title">Productos Orgánicos</h5>
+                    </a>
+                </div>
+                 <div class="col-md-6 col-lg-3">
+                     <a href="#" class="card-product text-decoration-none">
+                        <div class="card-img-container">
+                            <img src="img/lacteos.jpg" class="card-img-top" alt="Lácteos Frescos">
+                        </div>
+                        <h5 class="card-title">Lácteos Frescos</h5>
+                    </a>
+                </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-                <a href="prodtusorg.html" class="card-product text-decoration-none">
-                    <div class="card-img-container">
-                        <img src="img/prodorganicos.jpg" class="card-img-top" alt="Productos Orgánicos">
-                    </div>
-                    <h5 class="card-title">Productos Orgánicos</h5>
-                </a>
-            </div>
-             <div class="col-md-6 col-lg-3">
-                 <a href="#" class="card-product text-decoration-none">
-                    <div class="card-img-container">
-                        <img src="img/lacteos.jpg" class="card-img-top" alt="Lácteos Frescos">
-                    </div>
-                    <h5 class="card-title">Lácteos Frescos</h5>
-                </a>
-            </div>
-        </div>
+        </section>
     </main>
     
     <footer class="footer text-center">
