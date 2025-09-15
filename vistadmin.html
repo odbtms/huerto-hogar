@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Logístico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/estiloAdmin.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="container py-4">
+        <h1 class="mb-4">📦 VISTA ADMINISTRADOR</h1>
+
+        <!-- STOCK -->
+        <h3>STOCK DE LOS PRODUCTOS 🛒</h3>
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <div class="metric-card bg-total" id="stockFrutas">Frutas Frescas<br><strong>0</strong></div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card bg-pending" id="stockVerduras">Verduras Orgánicas<br><strong>0</strong></div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card bg-delivered" id="stockOrganicos">Productos Orgánicos<br><strong>0</strong>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card bg-cancelled" id="stockLacteos">Productos Lácteos<br><strong>0</strong></div>
+            </div>
+        </div>
+
+        <!-- Agregar producto -->
+        <div class="card mb-4">
+            <div class="card-header">➕ Agregar Producto</div>
+            <div class="card-body">
+                <form id="formProducto" class="row g-3">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="ID" id="idProducto" required>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="Nombre" id="nombreProducto" required>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="categoriaProducto" required>
+                            <option value="" disabled selected>Categoría</option>
+                            <option value="Frutas Frescas">Frutas Frescas</option>
+                            <option value="Verduras Orgánicas">Verduras Orgánicas</option>
+                            <option value="Productos Orgánicos">Productos Orgánicos</option>
+                            <option value="Productos Lácteos">Productos Lácteos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control" placeholder="Stock" id="stockProducto" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-success">Agregar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla de productos -->
+        <div class="card mb-4">
+            <div class="card-header">📋 Lista de Productos</div>
+            <div class="card-body table-responsive">
+                <table class="table table-bordered table-hover" id="tablaProductos">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">❌ Eliminar Producto</div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="ID del producto" id="idEliminarProducto">
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-danger" id="eliminarProductoBtn">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Estado de Pedido -->
+        <div class="card mb-4">
+            <div class="card-header">🚚 Estado de Pedido</div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="ID del producto" id="idEstadoPedido">
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary" id="verEstadoPedidoBtn">Ver Estado</button>
+                    </div>
+                </div>
+                <div class="mt-3" id="resultadoEstadoPedido"></div>
+            </div>
+        </div>
+
+        <script src="vistadmin.js"></script>
+
+</body>
+
+</html>
