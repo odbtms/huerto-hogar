@@ -306,3 +306,50 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0; /* Aparece al hacer hover */
 }
 /* --- FIN: NUEVO ESTILO DE TARJETAS DE PRODUCTO --- */
+
+
+
+/* --- Estilos específicos para el blog como fondo en movimiento --- */
+
+.hero-blog-background {
+    height: 100vh; /* Ocupa la altura completa de la ventana */
+    overflow: hidden; /* Asegura que las imágenes no sobresalgan */
+    position: relative; /* Necesario para posicionar el carrusel y el overlay */
+    color: white; /* Color de texto por defecto para esta sección */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-blog-background .carousel {
+    z-index: 0; /* Asegura que el carrusel esté detrás del texto */
+}
+
+.hero-blog-background .carousel-item img {
+    filter: brightness(0.7); /* Oscurece un poco las imágenes para que el texto resalte */
+}
+
+.blog-overlay {
+    z-index: 1; /* Un overlay semitransparente para mejorar la legibilidad del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Color oscuro con 50% de opacidad */
+}
+
+.blog-content {
+    z-index: 2; /* Asegura que el contenido (texto y botón) esté encima del overlay */
+    position: relative; /* Necesario para que z-index funcione correctamente */
+    padding: 3rem 1rem; /* Espaciado interno */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para el texto, mejora la legibilidad */
+}
+
+/* Opcional: Asegurarse de que el carrusel se adapte bien a pantallas más pequeñas */
+@media (max-width: 768px) {
+    .hero-blog-background {
+        height: 80vh; /* Menos altura en móviles si es necesario */
+    }
+    .blog-content h1 {
+        font-size: 2.5rem; /* Ajuste de tamaño de fuente para móviles */
+    }
+    .blog-content p.lead {
+        font-size: 1rem;
+    }
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/miestilo.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    
+
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light">
@@ -21,9 +23,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Catalogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#categorias">Catalogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 </ul>
                 <div class="d-flex align-items-center">
                     <a href="carrito.html" class="btn btn-light me-2">
@@ -42,52 +44,53 @@
             <p class="mx-auto">Productos frescos, locales y llenos de vida, entregados directamente a tu puerta.</p>
             <div class="mt-4">
                 <!-- Botón en el hero -->
-                <a href="#categorias" class="btn btn-primary rounded-pill px-4 py-2" style="font-size: 1.1rem;">Ver productos</a>
-        </div>
+                <a href="#categorias" class="btn btn-primary">Ver Productos</a>
+            </div>
     </header>
-<main class="container my-5 py-5">
-    <div class="text-center">
-        <h2 class="section-title">Nuestras Categorías</h2>
-        <p class="section-subtitle">Frescura que puedes ver y saborear. Encuentra tus productos favoritos en nuestras categorías seleccionadas.</p>
-    </div>
+    <main class="container my-5 py-5" id="categorias">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Nuestras Categorías</h2>
+            <p class="section-subtitle">Frescura que puedes ver y saborear. Encuentra tus productos favoritos en
+                nuestras categorías seleccionadas.</p>
+        </div>
 
-    <div class="row g-4">
-        <div class="col-md-6">
-            <a href="frutasfres.html" class="card-category">
-                <img src="img/frutasfrescas.jpg" alt="Frutas Frescas">
-                <div class="card-category-overlay">
-                    <h5 class="card-category-title">Frutas Frescas</h5>
-                </div>
-            </a>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <a href="frutasfres.html" class="card-category">
+                    <img src="img/frutasfrescas.jpg" alt="Frutas Frescas">
+                    <div class="card-category-overlay">
+                        <h5 class="card-category-title">Frutas Frescas</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="verduras.html" class="card-category">
+                    <img src="img/organicas.jpg" alt="Verduras Orgánicas">
+                    <div class="card-category-overlay">
+                        <h5 class="card-category-title">Verduras Orgánicas</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="productosorg.html" class="card-category">
+                    <img src="img/prodorganicos.jpg" alt="Productos Orgánicos">
+                    <div class="card-category-overlay">
+                        <h5 class="card-category-title">Productos Orgánicos</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="#" class="card-category">
+                    <img src="img/lacteos.jpg" alt="Lácteos Frescos">
+                    <div class="card-category-overlay">
+                        <h5 class="card-category-title">Lácteos Frescos</h5>
+                    </div>
+                </a>
+            </div>
         </div>
-        <div class="col-md-6">
-            <a href="verduras.html" class="card-category">
-                <img src="img/organicas.jpg" alt="Verduras Orgánicas">
-                <div class="card-category-overlay">
-                    <h5 class="card-category-title">Verduras Orgánicas</h5>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-6">
-            <a href="productosorg.html" class="card-category">
-                <img src="img/prodorganicos.jpg" alt="Productos Orgánicos">
-                <div class="card-category-overlay">
-                    <h5 class="card-category-title">Productos Orgánicos</h5>
-                </div>
-            </a>
-        </div>
-         <div class="col-md-6">
-             <a href="#" class="card-category">
-                <img src="img/lacteos.jpg" alt="Lácteos Frescos">
-                <div class="card-category-overlay">
-                    <h5 class="card-category-title">Lácteos Frescos</h5>
-                </div>
-            </a>
-        </div>
-    </div>
-</main>
+    </main>
 
-    
+
     <footer class="footer text-center">
         <div class="container">
             <p>&copy; 2025 Huerto Hogar. Frescura y calidad garantizada.</p>
@@ -97,4 +100,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/carrito.js"></script>
 </body>
+
 </html>
