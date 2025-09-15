@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Ubicación - Huerto Hogar</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/miestilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <style>
+        /* Estilo adicional para el contenedor del mapa */
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 15px; /* Bordes redondeados para suavizar */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="Logo Huerto Hogar">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#categorias">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a href="carrito.html" class="btn btn-light me-2">
+                        <i class="bi bi-cart fs-5"></i>
+                        <span class="badge bg-dark text-white ms-1" id="carrito-contador">0</span>
+                    </a>
+                    <a href="registro.html" class="btn btn-primary d-none d-lg-block">Crear Cuenta</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Nuestra Ubicación</h2>
+            <p class="section-subtitle">Aquí es donde cultivamos la frescura. ¡Visítanos y conoce el origen de tus alimentos!</p>
+        </div>
+
+        <div id="map"></div>
+    </main>
+
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 Huerto Hogar. Frescura y calidad garantizada.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/carrito.js"></script>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // Coordenadas para la dirección ficticia: "Avenida Los Notros 123, Concepción, Chile"
+        const latitud = -36.82699;
+        const longitud = -73.05055;
+
+        // Inicialización del mapa
+        var map = L.map('map').setView([latitud, longitud], 16);
+
+        // Capa de mapa de OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        // Marcador en la ubicación
+        var marker = L.marker([latitud, longitud]).addTo(map);
+
+        // Mensaje del marcador
+        marker.bindPopup("<b>Huerto Hogar 🌱</b><br>Avenida Los Notros 123.").openPopup();
+    </script>
+</body>
+
+</html>
