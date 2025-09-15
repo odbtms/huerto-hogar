@@ -1,49 +1,42 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-registro');
-    const erroresDiv = document.getElementById('errores');
-    if (!form) return;
+// js/registro-form.js
 
-    form.addEventListener('submit', function (e) {
-        let valid = true;
-        let mensajes = [];
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('registration-form');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
 
-        // Usuario
-        const usuario = form.usr.value.trim();
-        if (usuario.length < 3) {
-            valid = false;
-            mensajes.push('El usuario debe tener al menos 3 caracteres.');
-        }
+    form.addEventListener('submit', event => {
+        // Prevenir el envío del formulario por defecto
+        event.preventDefault();
+        event.stopPropagation();
 
-        // Email
-        const email = form.mail.value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            valid = false;
-            mensajes.push('El correo electrónico no es válido.');
-        }
+        let isValid = true;
 
-        // Contraseña
-        const pass = form.pass.value;
-        if (pass.length < 6) {
-            valid = false;
-            mensajes.push('La contraseña debe tener al menos 6 caracteres.');
-        }
-
-        // Confirmar contraseña
-        const repass = form.repass.value;
-        if (pass !== repass) {
-            valid = false;
-            mensajes.push('Las contraseñas no coinciden.');
-        }
-
-        // Mostrar mensajes y evitar envío si hay errores
-        if (!valid) {
-            e.preventDefault();
-            erroresDiv.classList.remove('d-none');
-            erroresDiv.innerHTML = mensajes.map(m => `<div>${m}</div>`).join('');
+        // Validar confirmación de contraseña
+        if (password.value !== confirmPassword.value) {
+            confirmPassword.classList.add('is-invalid');
+            confirmPassword.classList.remove('is-valid');
+            isValid = false;
+        } else if (confirmPassword.value) {
+            confirmPassword.classList.remove('is-invalid');
+            confirmPassword.classList.add('is-valid');
         } else {
-            erroresDiv.classList.add('d-none');
-            erroresDiv.innerHTML = '';
+            confirmPassword.classList.add('is-invalid');
+            confirmPassword.classList.remove('is-valid');
+        }
+
+        // Aplicar las clases de validación de Bootstrap al resto del formulario
+        if (!form.checkValidity()) {
+            isValid = false;
+        }
+
+        form.classList.add('was-validated');
+
+        if (isValid) {
+            console.log('Formulario válido, redirigiendo al inicio.');
+            
+            // LÍNEA MODIFICADA: En lugar de una alerta, te lleva a index.html
+            window.location.href = 'index.html'; 
         }
     });
 });

@@ -1,56 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>Crear Cuenta - Huerto Hogar</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/miestilo.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/bootstrap.bundle.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
+<body class="registro-body">
 
-<body>
- </div>
-    </nav>
+    <div class="container-fluid">
+        <div class="row g-0 min-vh-100">
+            <div class="col-lg-6 d-none d-lg-block registro-bg-image">
+            </div>
 
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
-                <div class="shadow rounded form-registro">
-                    <div class="p-3 bg-success">
-                        <h1 class="text-center text-white">Registro de Usuarios</h1>
+            <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center p-4 p-md-5">
+                <div class="form-container w-100" style="max-width: 450px;">
+                    <div class="text-center mb-4">
+                        <a href="index.html">
+                            <img src="img/logo.png" alt="Logo Huerto Hogar" style="max-height: 50px;">
+                        </a>
+                        <h1 class="h3 mt-3">Crear una cuenta</h1>
                     </div>
-                    <form action="index.html" method="post" enctype="multipart/form-data" class="p-3" id="form-registro">
-                        <!-- Contenedor para mensajes de error -->
-                        <div id="errores" class="alert alert-danger d-none"></div>
-                        <div class="mb-3 mt-3">
-                            <label for="usr" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" required name="usr" id="usr" placeholder="Usuario">
+                    
+                    <form id="registration-form" novalidate>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                            <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
                         </div>
-                        <div class="mb-3 mt-3">
-                            <label for="mail" class="form-label">E-mail</label>
-                            <input type="email" class="form-control" required name="mail" id="mail" placeholder="Correo Electrónico">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Por favor, ingresa un correo válido.</div>
                         </div>
-                        <div class="mb-3 mt-3">
-                            <label for="pass" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" required name="pass" id="pass" placeholder="Contraseña">
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                            <div class="invalid-feedback">La contraseña es requerida.</div>
                         </div>
-                        <div class="mb-3 mt-3">
-                            <label for="repass" class="form-label">Confirmar Contraseña</label>
-                            <input type="password" class="form-control" required name="repass" id="repass" placeholder="Confirmar Contraseña">
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                            <div class="invalid-feedback">Las contraseñas no coinciden.</div>
                         </div>
-                        <div class="text-center">
-                            <input class="btn btn-success btn-md px-5" type="submit" value="Enviar">
-                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100">Crear cuenta</button>
                     </form>
+
+                    <div class="text-center my-3 text-muted">o</div>
+
+                    <div class="d-grid gap-2">
+                        <a href="#" class="btn btn-google"><i class="bi bi-google me-2"></i>Continuar con Google</a>
+                        <a href="#" class="btn btn-facebook"><i class="bi bi-facebook me-2"></i>Continuar con Facebook</a>
+                    </div>
+                    
+                    <p class="text-center mt-4">
+                        ¿Ya tienes una cuenta? <a href="#"><strong>Inicia sesión</strong></a>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="js/registro-form.js"></script>
 </body>
-
 </html>
