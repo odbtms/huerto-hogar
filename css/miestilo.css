@@ -1,4 +1,4 @@
-/* css/miestilo.css (Versión Final - Minimalista y Verde) */
+/* css/miestilo.css (Versión Final - Completa) */
 
 /* 1. Importación de Fuentes y Estilos Globales */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
@@ -26,27 +26,58 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* 2. Componentes Principales */
-
-/* Barra de Navegación */
+/* 2. Barra de Navegación */
 .navbar {
     background-color: var(--color-fondo);
     border-bottom: 1px solid var(--color-borde);
     padding: 1rem 0;
 }
-.navbar-brand img { max-height: 35px; }
-.navbar .nav-link { font-weight: 600; color: var(--color-texto-secundario); }
-.navbar .nav-link:hover { color: var(--color-texto); }
+.navbar-brand img {
+    max-height: 45px; /* Tamaño del logo aumentado */
+}
+.navbar .nav-link {
+    font-weight: 600;
+    color: var(--color-texto-secundario);
+    padding: 0.5rem 1rem; /* Espaciado para centrado */
+}
+.navbar .nav-link:hover {
+    color: var(--color-texto);
+}
 
-/* Sección de Inicio (Hero) */
-.hero-section {
+/* 3. Sección de Inicio (Hero) */
+.hero-section { /* Para páginas sin imagen de fondo */
     background-color: var(--color-fondo);
     padding: 100px 0;
 }
 .hero-section h1 { font-size: 3.5rem; font-weight: 700; max-width: 650px; }
 .hero-section p { font-size: 1.125rem; color: var(--color-texto-secundario); max-width: 550px; }
 
-/* Botones */
+/* Hero con Imagen de Fondo */
+.hero-section-con-imagen {
+    position: relative;
+    background-image: url('../img/fondo1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 120px 0;
+}
+.hero-section-con-imagen::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.hero-section-con-imagen .container {
+    position: relative;
+    z-index: 2;
+}
+.hero-section-con-imagen h1,
+.hero-section-con-imagen p {
+    color: #ffffff;
+}
+
+/* 4. Botones */
 .btn {
     border-radius: 8px;
     padding: 12px 28px;
@@ -74,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--color-borde);
 }
 
-/* Tarjetas de Categoría y Producto */
+/* 5. Tarjetas de Categoría y Producto */
 .card-product {
     border: none;
     background-color: transparent;
@@ -95,15 +126,9 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #F3F4F6;
 }
 .card-product .card-img-top {
-    width: 100%;
-    height: 180px; /* o el alto que prefieras */
-    object-fit: cover;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-    background: none; /* Elimina el fondo gris */
-    display: block;
-    margin: 0; /* Elimina márgenes */
-    padding: 0; /* Elimina padding */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 .card-product .card-title {
     font-size: 1.125rem;
@@ -117,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-texto-secundario);
 }
 
-/* Footer */
+/* 6. Footer */
 .footer {
     background-color: var(--color-fondo-sutil);
     color: var(--color-texto-secundario);
@@ -126,91 +151,140 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid var(--color-borde);
 }
 
-/* --- AÑADE ESTO AL FINAL DE miestilo.css --- */
-
-/* Estilos para la imagen de fondo del Hero Section */
-.hero-section-con-imagen {
-    position: relative;
-    background-image: url('../img/fondo1.jpg'); /* Asegúrate de que esta imagen exista */
-    background-size: cover;
-    background-position: center;
-    color: #ffffff; /* Cambiamos el color del texto a blanco */
-    padding: 120px 0;
-}
-
-/* Capa oscura para mejorar la legibilidad del texto */
-.hero-section-con-imagen::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Capa semitransparente */
-    z-index: 1;
-}
-
-/* Aseguramos que el contenido esté por encima de la capa oscura */
-.hero-section-con-imagen .container {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-section-con-imagen h1,
-.hero-section-con-imagen p {
-    color: #ffffff; /* Forzamos el color blanco para el texto dentro del hero */
-}
-
-/* Estilos adicionales para las imágenes de las tarjetas de categoría y producto */
-.category-card img,
-.card-img-top {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: 14px;
-    border-top-right-radius: 14px;
-    background: #e0e0e0;
-    display: block;
-}
-
-
-/* Estilos para la Página de Registro */
-
+/* 7. Estilos para la Página de Registro */
 .registro-body {
-    background-color: #ffffff; /* Fondo blanco para el formulario */
+    background-color: #ffffff;
 }
-
 .registro-bg-image {
-    background-image: url('../img/LOGIN1.jpg'); /* Puedes cambiar esta imagen por otra */
+    background-image: url('../img/fondo1.jpg');
     background-size: cover;
     background-position: center;
 }
-
 .form-container {
     padding: 2rem;
 }
-
-/* Estilos para los botones sociales */
 .btn-google {
     background-color: #ffffff;
     color: #444444;
     border: 1px solid #ddd;
     transition: background-color 0.3s ease;
 }
-
 .btn-google:hover {
     background-color: #f7f7f7;
     color: #444444;
 }
-
 .btn-facebook {
     background-color: #1877F2;
     color: #ffffff;
     border: none;
     transition: background-color 0.3s ease;
 }
-
 .btn-facebook:hover {
     background-color: #166fe5;
     color: #ffffff;
 }
+
+
+
+/* Estilos Mejorados para Tarjetas de Categoría */
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--color-texto-secundario);
+    max-width: 500px;
+    margin: 0 auto 3rem auto;
+}
+
+.card-category {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+
+.card-category img {
+    width: 100%;
+    height: 350px; /* Altura fija para todas las tarjetas */
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-category:hover img {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+.card-category-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 1.5rem 1.5rem; /* Espaciado interno */
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); /* Gradiente oscuro */
+}
+
+.card-category-title {
+    font-family: var(--font-principal);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Sombra para el texto */
+}
+
+/* --- INICIO: NUEVO ESTILO DE TARJETAS DE PRODUCTO --- */
+.card-product {
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    background-color: var(--color-fondo);
+    transition: all 0.3s ease;
+    text-align: left; /* Alineamos el texto a la izquierda */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Hacemos que todas las tarjetas tengan la misma altura */
+}
+
+.card-product:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transform: translateY(-5px);
+    border-color: var(--color-acento);
+}
+
+.card-product .card-img-top {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.card-product .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que el card-body ocupe el espacio restante */
+}
+
+.card-product .card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-product .card-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-acento);
+    margin-bottom: 1rem;
+}
+
+.card-product .btn {
+    margin-top: auto; /* Empuja el botón siempre hacia abajo */
+}
+/* --- FIN: NUEVO ESTILO DE TARJETAS DE PRODUCTO --- */
